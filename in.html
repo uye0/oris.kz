@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="assets/img/logotype.png" type="image/x-icon">
+	
+  <title>Ашылмалы мәзір</title>
+  <style>
+    body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #F5F5DC;
+  transition: background-color 0.3s ease;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 20px;
+}
+
+.category {
+  cursor: pointer;
+  padding: 10px;
+  width: fit-content;
+  background-color: #2ec5af;
+  color: white;
+  margin: 5px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 20px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.category:hover {
+  background-color: #27a895;
+}
+
+.sub-category {
+  display: none;
+  padding-left: 20px;
+  margin-top: 5px;
+}
+
+.sub-category button {
+  background-color: #e74c3c;
+  color: white;
+  margin: 5px;
+  font-size: 20px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-in-in button:hover {
+  background-color: #47a92c !important;
+}
+.category-in-in-in button:hover {
+  background-color: #a92ca9 !important;
+}
+.category-in-in button {
+  background-color: #4eb931 !important;
+  color: white;
+  margin: 5px;
+  font-size: 20px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.category-in-in-in button {
+  background-color: #992699 !important;
+  color: white;
+  margin: 5px;
+  font-size: 20px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.sub-category button:hover {
+  background-color: #c0392b;
+}
+
+body.dark-mode {
+  background-color: #2c3e50;
+  color: white;
+}
+
+.category.dark-mode {
+  background-color: #27a895;
+}
+
+.category.dark-mode:hover {
+  background-color: #2ec5af;
+}
+
+.sub-category.dark-mode {
+  background-color: #34495e;
+}
+.category-in-in.dark-mode button {
+  background-color: #4eb931 !important;
+}
+.category-in-in.dark-mode button:hover {
+  background-color: #47a92c !important;
+}
+.sub-category.dark-mode button {
+  background-color: #e74c3c;
+}
+
+.sub-category.dark-mode button:hover {
+  background-color: #c0392b;
+}
+
+.settings-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.settings-icon img {
+  width: 40px;
+}
+.category img{
+  width: 80px;
+  height: 80px;
+  background: #f9f9f9;
+  border-radius: 50%;
+  margin-right: 15px;
+}
+ul li{
+  list-style: none;
+}
+.category-in{
+  text-align: center;
+  display:  block !important;
+  background: #b4b931;
+}
+.category-in:hover{
+  background: #9a9e29;
+}
+
+  </style>
+</head>
+<body>
+
+<ul class="menu">
+  <li class="category" onclick="toggleSubCategory('zhemister')">
+    <img   src="assets/img/a.png" alt="">
+    Жемістер | Fruits
+  </li>
+  <ul class="sub-category" id="zhemister">
+    <li class="category category-in" onclick="toggleSubCategory('alma')">
+      <img   src="assets/img/apple-98-964x1024-removebg-preview.png" alt=""><br>
+      Алма | Apple
+      <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/apple.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+    </li>
+    <ul class="sub-category" id="alma">
+      <li><button>Жеміс | fruit 
+      </button></li>
+      <li><button>Ағаш | tree</button></li>
+      <li><button>Қызыл | red</button></li>
+      <li><button>Тағам | meal</button></li>
+      <li><button>Темірге бай | rich in ferrum</button></li>
+      <li  onclick="toggleSubCategory('Aport')"><button>Алматының апорты | Aport of Almaty</button></li>
+        <ul class="category-in-in sub-category" id="Aport">
+          <li onclick="toggleSubCategory('heart')"><button>жүректей | like heart</button></li>
+          <ul class="category-in-in-in sub-category" id="heart">
+            <li onclick="toggleSubCategory('symbol')"><button>елдің символы | symbol of the country</button></li>
+				<ul class="category-in-in-in sub-category" id="symbol">
+					<li ><button>тәтті | sweet</button></li>
+			  </ul>
+          </ul>
+        </ul>
+    </ul>
+
+    <li class="category category-in" onclick="toggleSubCategory('Peach')">
+      <img   src="assets/img/360_F_296146471_kzMkM4pigH1f8joOq5lowxTgGeO3FwAq-removebg-preview.png" alt=""><br>
+      Шабдалы | Peach
+      <br>
+      <audio style="margin-top: 10px;" controls>
+         <source src="assets/audiofile/шабдалы.m4a" type="audio/mp3">
+         Your browser does not support the audio tag.
+     </audio></li>
+    <ul class="sub-category" id="Peach">
+      <li><button>сүйегі ірі | bone is large</button></li>
+      <li><button>түкті | hairy</button></li>
+      <li><button>қызыл сары | reddish</button></li>
+      <li><button>калийге бар | Rich in potassium</button></li>
+      <li  onclick="toggleSubCategory('soft')"><button>жұмсақ | soft</button></li>
+        <ul class="category-in-in sub-category" id="soft">
+          <li onclick="toggleSubCategory('pillow')"><button>жастық | pillow</button></li>
+          <ul class="category-in-in-in sub-category" id="pillow">
+            <li onclick="toggleSubCategory('character')"><button>мінез | character</button></li>
+				<ul class="category-in-in-in sub-category" id="character">
+					<li ><button>ана алақаны | mother’s palm</button></li>
+			  </ul>
+          </ul>
+        </ul>
+      <!-- Внутренние категории для "Шабдалы" -->
+    </ul>
+    <li class="category category-in" onclick="toggleSubCategory('Pear')">
+      <img   src="assets/img/pngtree-pear-food-healthy-green-still-life-png-image_3355308-removebg-preview.png" alt=""><br>
+      Алмұрт | Pear
+      <br>
+      <audio style="margin-top: 10px;" controls>
+         <source src="assets/audiofile/алмұрт.m4a" type="audio/mp3">
+         Your browser does not support the audio tag.
+     </audio></li>
+    <ul class="sub-category" id="Pear">
+      <li><button>шырынды | juicy</button></li>
+      <li><button>қатты | hard</button></li>
+      <li><button>жасыл | green</button></li>
+      <li><button>йодқа бай | Rich in iodine</button></li>
+      <li  onclick="toggleSubCategory('jug')"><button>құмыра | jug</button></li>
+        <ul class="category-in-in sub-category" id="jug">
+          <li onclick="toggleSubCategory('pottery')"><button>қыш | pottery</button></li>
+          <ul class="category-in-in-in sub-category" id="pottery">
+            <li onclick="toggleSubCategory('etruscan')"><button>этрус | etruscan</button></li>
+				<ul class="category-in-in-in sub-category" id="etruscan">
+					<li ><button>гүл | flower</button></li>
+			  </ul>
+          </ul>
+        </ul>
+    </ul>
+    <li class="category category-in" onclick="toggleSubCategory('Plum')">
+      <img   src="assets/img/pngtree-plum-photography-snack-fruit-png-image_3356927-removebg-preview.png" alt=""><br>
+      Өрік | Plum
+      <br>
+      <audio style="margin-top: 10px;" controls>
+         <source src="assets/audiofile/Өрік.m4a" type="audio/mp3">
+         Your browser does not support the audio tag.
+     </audio></li>
+    <ul class="sub-category" id="Plum">
+      <li><button>тығыз | dense</button></li>
+      <li><button>дәмді | delicious</button></li>
+      <li><button>сары | yellow</button></li>
+      <li><button>глюкозаға бай | rich in glucose</button></li>
+      <li  onclick="toggleSubCategory('jam')"><button>тосап | jam</button></li>
+        <ul class="category-in-in sub-category" id="jam">
+          <li onclick="toggleSubCategory('tea')"><button>шай | tea</button></li>
+          <ul class="category-in-in-in sub-category" id="tea">
+            <li onclick="toggleSubCategory('winter')"><button>қыс | winter</button></li>
+				<ul class="category-in-in-in sub-category" id="winter">
+					<li ><button>отбасы | family</button></li>
+			  </ul>
+          </ul>
+        </ul>
+    </ul>
+    <li class="category category-in" onclick="toggleSubCategory('Cherry')">
+      <img   src="assets/img/red-cherry-with-leaf-on-a-transparent-background-png.webp" alt=""><br>
+      Шие | Cherry
+      <br>
+      <audio style="margin-top: 10px;" controls>
+         <source src="assets/audiofile/шие.m4a" type="audio/mp3">
+         Your browser does not support the audio tag.
+     </audio></li>
+    <ul class="sub-category" id="Cherry">
+      <li><button>күрең қызыл | maroon red</button></li>
+      <li><button>жалтыр | shiny</button></li>
+      <li><button>ұсақ | small</button></li>
+      <li><button>мыстың мөлшері көп | the amount of zink is large</button></li>
+      <li><button>егіз | twin</button></li>
+      <li  onclick="toggleSubCategory('twin')"><button>егіз | twin</button></li>
+        <ul class="category-in-in sub-category" id="twin">
+          <li onclick="toggleSubCategory('child')"><button>бала | child</button></li>
+          <ul class="category-in-in-in sub-category" id="child">
+            <li onclick="toggleSubCategory('generation')"><button>ұрпақ | generation</button></li>
+				<ul class="category-in-in-in sub-category" id="generation">
+					<li ><button>көп | much</button></li>
+			  </ul>
+          </ul>
+        </ul>
+    </ul>
+  </ul>
+<!-- ----------------     -->
+  <li class="category" onclick="toggleSubCategory('kokonister')">
+    <img   src="assets/img/vegetable-transparent-free-png.webp" alt="">
+    Көкөністер | Vegetables
+  </li>
+  <ul class="sub-category" id="kokonister">
+    <li class="category  category-in" onclick="toggleSubCategory('Onion')">
+		
+      <img   src="assets/img/onion.png" alt=""><br>
+		Пияз | Onion
+		<br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/пияз.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+    <ul class="sub-category" id="Onion">
+      <li><button>тамақ | meale</button></li>
+      <li><button>ақ | white</button></li>
+      <li><button>көз жасы | tears</button></li>
+      <li><button>пигменттерді кетіреді | removes pigments</button></li>
+      <li  onclick="toggleSubCategory('spicy')"><button>ащы | spicy</button></li>
+        <ul class="category-in-in sub-category" id="spicy">
+          <li onclick="toggleSubCategory('123test')"><button>тәбет ашады  | </button></li>
+          <ul class="category-in-in-in sub-category" id="123test">
+            <li onclick="toggleSubCategory('salad')"><button>салат | salad</button></li>
+				<ul class="category-in-in-in sub-category" id="salad">
+					<li ><button>бақша | garden</button></li>
+			  </ul>
+          </ul>
+        </ul>
+    </ul>
+    <li class="category category-in" onclick="toggleSubCategory('Cucumber')">
+		<img src="assets/img/cucumber.png" alt=""><br>
+		Қияр | Cucumber
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/қияр.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+    <ul class="sub-category" id="Cucumber">
+      <li><button>сопақ | oval</button></li>
+      <li><button>сулы | watery</button></li>
+      <li><button>жасартады | rejuvenates</button></li>
+      <li><button>бүршікті | budding</button></li>
+      <li  onclick="toggleSubCategory('salt')"><button>тұз | salt</button></li>
+        <ul class="category-in-in sub-category" id="salt">
+          <li onclick="toggleSubCategory('meat')"><button>eт | meat</button></li>
+          <ul class="category-in-in-in sub-category" id="meat">
+            <li onclick="toggleSubCategory('sea')"><button>Арал | The Aral sea</button></li>
+				<ul class="category-in-in-in sub-category" id="sea">
+					<li ><button>арзан | cheap</button></li>
+			  </ul>
+          </ul>
+        </ul>
+    </ul>
+    <li class="category category-in" onclick="toggleSubCategory('Tomatoes')">
+		<img src="assets/img/tomato.png" alt=""><br>
+		Қызанақ | Tomatoes
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/қызанақ.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+	  
+    <ul class="sub-category" id="Tomatoes">
+      <li><button>дөңгелек | round</button></li>
+      <li><button>қызыл, қызғылт | Red, pink</button></li>
+      <li><button>қышқыл | sour</button></li>
+      <li><button>фолий қышқылына бай | rich in  folium</button></li>
+      <li  onclick="toggleSubCategory('preparation')"><button>қысқа дайынды | Winter preparation</button></li>
+        <ul class="category-in-in sub-category" id="preparation">
+          <li onclick="toggleSubCategory('can')"><button>банка | can</button></li>
+          <ul class="category-in-in-in sub-category" id="can">
+            <li onclick="toggleSubCategory('salad1')"><button>cалат | salad</button></li>
+				<ul class="category-in-in-in sub-category" id="salad1">
+					<li ><button>дәмдеуіш | spice</button></li>
+			  </ul>
+          </ul>
+        </ul>
+    </ul>
+    <li class="category category-in" onclick="toggleSubCategory('Potatoes')">
+		<img src="assets/img/potato.png" alt=""><br>
+		Картоп | Potatoes
+	<br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/картоп.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+    <ul class="sub-category" id="Potatoes">
+      <li><button>қоңыр | brown</button></li>
+      <li><button>тойымды | full</button></li>
+      <li><button>қара топыра | black soil</button></li>
+      <li><button>крахмалға бай | rich in starch</button></li>
+      <li  onclick="toggleSubCategory('bread')"><button>екінші «нан» | “second” bread</button></li>
+        <ul class="category-in-in sub-category" id="bread">
+          <li onclick="toggleSubCategory('nutritious')"><button>құнарлы | nutritious</button></li>
+          <ul class="category-in-in-in sub-category" id="nutritious">
+            <li onclick="toggleSubCategory('big')"><button>үлкен | big</button></li>
+				<ul class="category-in-in-in sub-category" id="big">
+					<li ><button>колорадо қоңызы | Colorado potato beetle</button></li>
+			  </ul>
+          </ul>
+        </ul>
+    </ul>
+    <li class="category category-in" onclick="toggleSubCategory('Carrots')">
+		<img src="assets/img/carrot.png" ><br>
+		Сәбіз | Carrots
+		<br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/сәбіз.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+    <ul class="sub-category" id="Carrots">
+      <li><button>қызыл сары | orange</button></li>
+      <li><button>палау | pilaf</button></li>
+      <li><button>аққала | the snowman</button></li>
+      <li><button>каротинге бай | rich in carotene</button></li>
+      <li  onclick="toggleSubCategory('uzbek')"><button>өзбек | uzbek</button></li>
+        <ul class="category-in-in sub-category" id="uzbek">
+          <li onclick="toggleSubCategory('motherland')"><button>палаудың Отаны | the motherland of pilaf</button></li>
+          <ul class="category-in-in-in sub-category" id="motherland">
+            <li onclick="toggleSubCategory('neigbour')"><button>көршілес ел | neigbour</button></li>
+				<ul class="category-in-in-in sub-category" id="neigbour">
+					<li ><button>ұлттық тағамы | traditional meal</button></li>
+			  </ul>
+          </ul>
+        </ul>
+    </ul>
+  </ul>
+<!-- ----------------     -->
+<li class="category" onclick="toggleSubCategory('Food')">
+  <img   src="assets/img/41619-7-groceries-free-download-image.png" alt="">
+  Азық-түліктер | Food products
+</li>
+<ul class="sub-category" id="Food">
+  <li class="category category-in" onclick="toggleSubCategory('Bread')">
+	  <img src="assets/img/bread.png" ><br>
+	  Нан | Bread
+	<br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/нан.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Bread">
+    <li><button>ұн | flour</button></li>
+    <li><button>қасиетті | sacred</button></li>
+    <li><button>бидай | wheat</button></li>
+    <li><button>амин қышқылына бай | rich in amino acids</button></li>
+    <li  onclick="toggleSubCategory('meal')"><button>ас атасы | the main meal</button></li>
+        <ul class="category-in-in sub-category" id="meal">
+          <li onclick="toggleSubCategory('feast')"><button>Тағамның үлкені | feast meal</button></li>
+          <ul class="category-in-in-in sub-category" id="feast">
+            <li onclick="toggleSubCategory('served')"><button>дастарқанға  бірінші қойылады | it is served/put as the main meal</button></li>
+				<ul class="category-in-in-in sub-category" id="served">
+					<li ><button>Қазақстан | Kazakhstan</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Milk')">
+	  <img src="assets/img/milk.png" ><br>
+	  Сүт | Milk
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/сүт.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Milk">
+    <li><button>сиыр | cow</button></li>
+    <li><button>ағарған | kefir</button></li>
+    <li><button>тазалық | clearness</button></li>
+    <li><button>кальцийге бай | rich in calcium</button></li>
+    <li  onclick="toggleSubCategory('spill')"><button>ақты төкпе | do not spill the milk</button></li>
+    <ul class="category-in-in sub-category" id="spill">
+      <li onclick="toggleSubCategory('considered')"><button>малды қасиетті санайды | the animal is considered sacred</button></li>
+      <ul class="category-in-in-in sub-category" id="considered">
+        <li onclick="toggleSubCategory('pity')"><button>обал болады | it will be pity</button></li>
+    <ul class="category-in-in-in sub-category" id="pity">
+      <li ><button>мал бітпейді | cattle do not end</button></li>
+    </ul>
+      </ul>
+    </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Eggs')">
+	  <img src="assets/img/eggs.png" ><br>
+	  Жұмыртқа | Eggs
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/жұмыртқа.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Eggs">
+    <li><button>аршу | peeling</button></li>
+    <li><button>тауық | chicken</button></li>
+    <li><button>балапан | chick</button></li>
+    <li  onclick="toggleSubCategory('source')"><button>белоктың көзі | source of protein</button></li>
+        <ul class="category-in-in sub-category" id="source">
+          <li onclick="toggleSubCategory('123tet2')"><button>жұмыртқаның сарысы | </button></li>
+          <ul class="category-in-in-in sub-category" id="123tet2">
+            <li onclick="toggleSubCategory('sperm')"><button>ұрық | sperm</button></li>
+				<ul class="category-in-in-in sub-category" id="sperm">
+					<li ><button>бастау  | </button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+    <!-- Внутренние категории для "Алмұрт" -->
+    
+  <li class="category category-in" onclick="toggleSubCategory('Meat')">
+	  <img src="assets/img/meat.png" ><br>
+	  Ет | Meat
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/ет.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Meat">
+    <li><button>құнарлы | nutritious</button></li>
+    <li><button>қазы | kazy</button></li>
+    <li><button>шаруашылық | farming</button></li>
+    <li><button>көмірсуға бай | rich in carbohydrates</button></li>
+    <li  onclick="toggleSubCategory('besbarmak')"><button>ет (бешбармақ) | besbarmak</button></li>
+        <ul class="category-in-in sub-category" id="besbarmak">
+          <li onclick="toggleSubCategory('bowl')"><button>астау | bowl</button></li>
+          <ul class="category-in-in-in sub-category" id="bowl">
+            <li onclick="toggleSubCategory('fatty')"><button>майлы | fatty</button></li>
+				<ul class="category-in-in-in sub-category" id="fatty">
+					<li ><button>cоғым  | forge</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Fat')">
+	  <img src="assets/img/butter.png" ><br>
+	  Май | Butter
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/май.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Fat">
+    <li><button>пісте май | pistachio oil</button></li>
+    <li><button>сары май | butter</button></li>
+    <li><button>сұйық | liquid</button></li>
+    <li><button>қуат береді | gives energy</button></li>
+    <li  onclick="toggleSubCategory('kubi')"><button>күбі | kubi</button></li>
+        <ul class="category-in-in sub-category" id="kubi">
+          <li onclick="toggleSubCategory('kurt')"><button>кұрт | kurt</button></li>
+          <ul class="category-in-in-in sub-category" id="kurt">
+            <li onclick="toggleSubCategory('grandmothers')"><button>әжелер | grandmothers</button></li>
+				<ul class="category-in-in-in sub-category" id="grandmothers">
+					<li ><button>қарынмай  | fat</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+</ul>
+<!-- ----------------     -->
+<li class="category" onclick="toggleSubCategory('Weather')">
+  <img   src="assets/img/2275.png" alt="">
+  Ауа райы | Weather
+</li>
+<ul class="sub-category" id="Weather">
+  <li class="category category-in" onclick="toggleSubCategory('Precipitation')">
+	  <img src="assets/img/rainy.png" ><br>
+	  Жаңбырлы  | Rainy
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/rainy.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Precipitation">
+    <li><button>Ылғал | Wet</button></li>
+    <li><button>Найзағай | Thunderstorm</button></li>
+    <li  onclick="toggleSubCategory('benefit')"><button>Ырыс | Benefit</button></li>
+        <ul class="category-in-in sub-category" id="benefit">
+          <li onclick="toggleSubCategory('wealth')"><button>Байлық | Wealth</button></li>
+          <ul class="category-in-in-in sub-category" id="wealth">
+            <li onclick="toggleSubCategory('abundance')"><button>Молшылық | Abundance</button></li>
+				<ul class="category-in-in-in sub-category" id="abundance">
+					<li ><button>несібе  | benefit</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Snow')">
+	  <img src="assets/img/snowy.png" ><br>
+	  Қар  | Snow
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/snow.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Snow">
+	  <li><button>салқын | cold</button></li>
+      <li><button>ақ | white</button></li>
+	</ul>
+      
+  <li class="category category-in" onclick="toggleSubCategory('Wind')">
+	  <img src="assets/img/wind.png" ><br>
+	  Жел | Wind
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/wind.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Wind">
+    <li><button>шаң | dust</button></li>
+    <li><button>салқын | cool</button></li>
+    <li><button>самал | wind</button></li>
+    <li><button>дүлей | storm</button></li>
+    <li  onclick="toggleSubCategory('erosion')"><button>топырақ эрозиясы | soil erosion</button></li>
+        <ul class="category-in-in sub-category" id="erosion">
+          <li onclick="toggleSubCategory('windwear')"><button>тозу | wind wear</button></li>
+          <ul class="category-in-in-in sub-category" id="windwear">
+            <li onclick="toggleSubCategory('barren')"><button>құнарсыз | barren</button></li>
+				<ul class="category-in-in-in sub-category" id="barren">
+					<li ><button>экологиялық мәселе  | ecological issuelight blue</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Sunny')">
+	  <img src="assets/img/sunny.png" ><br>
+	  Шуақты | Sunny
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/sunny.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Sunny">
+    <li><button>көгілдір | light blue</button></li>
+    <li><button>ашық аспан | blue sky</button></li>
+    <li><button>күн | sun</button></li>
+    <li><button>шуақты | sunny</button></li>
+    <li  onclick="toggleSubCategory('friendly')"><button>мейірімді | friendly</button></li>
+        <ul class="category-in-in sub-category" id="friendly">
+          <li onclick="toggleSubCategory('heat')"><button>жылулық | heat</button></li>
+          <ul class="category-in-in-in sub-category" id="heat">
+            <li onclick="toggleSubCategory('human')"><button>адами | human</button></li>
+				<ul class="category-in-in-in sub-category" id="human">
+					<li ><button>ана   | mother</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Blizzard')">
+	  <img src="assets/img/blizzard.png" ><br>
+	  Боран | Blizzard
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/blizzard.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Blizzard">
+    <li><button>суық | cold</button></li>
+    <li><button>қатал | strong</button></li>
+    <li><button>қыс | winter</button></li>
+    <li><button>ақтүтек  | Severe blizzard</button></li>
+    <li  onclick="toggleSubCategory('jute')"><button>жұт | jute</button></li>
+        <ul class="category-in-in sub-category" id="jute">
+          <li onclick="toggleSubCategory('cattle')"><button>мал қырылуы | cattle death</button></li>
+          <ul class="category-in-in-in sub-category" id="cattle">
+            <li onclick="toggleSubCategory('problem')"><button>қиындық | problem</button></li>
+				<ul class="category-in-in-in sub-category" id="problem">
+					<li ><button>кедейлік   | poverty</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+</ul>
+<!-- ----------------     -->
+<li class="category" onclick="toggleSubCategory('Clothes')">
+  <img   src="assets/img/clothing-rack-jacket-04rWLd7-600.jpeg" alt="">
+  Киімдер | Clothes
+</li>
+<ul class="sub-category" id="Clothes">
+  <li class="category category-in" onclick="toggleSubCategory('Pants')">
+	  <img src="assets/img/pants.png" ><br>
+	  Шалбар  | Pants
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/pants.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Pants">
+    <li><button>балақты | flared</button></li>
+    <li><button>ыңғайлы | comfortable</button></li>
+    <li><button>жылы | warm</button></li>
+    <li><button>сәнді | fashionable</button></li>
+    <li  onclick="toggleSubCategory('trives')"><button>Сақ тайпасы ойлап тапқан | It is invented by sak trives</button></li>
+        <ul class="category-in-in sub-category" id="trives">
+          <li onclick="toggleSubCategory('Amozanka')"><button>Амазонка | Amozanka</button></li>
+          <ul class="category-in-in-in sub-category" id="Amozanka">
+            <li onclick="toggleSubCategory('brave')"><button>ержүрек | brave</button></li>
+				<ul class="category-in-in-in sub-category" id="brave">
+					<li ><button>Томирис   | Tomiris</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Shirt')">
+	  <img src="assets/img/shirt.png" ><br>
+	  Жейде  | Shirt
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/shirt.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Shirt">
+    <li><button>жағалы | collar</button></li>
+    <li><button>түрлі түсті | colourful</button></li>
+    <li><button>денеге жайлы | comfortable for the body</button></li>
+    <li><button>түймелер | buttons</button></li>
+    <li  onclick="toggleSubCategory('ironing')"><button>үтіктеу | ironing</button></li>
+        <ul class="category-in-in sub-category" id="ironing">
+          <li onclick="toggleSubCategory('cleaning')"><button>тазалық | cleaning</button></li>
+          <ul class="category-in-in-in sub-category" id="cleaning">
+            <li onclick="toggleSubCategory('punctuality')"><button>ұқыптылық | punctuality</button></li>
+				<ul class="category-in-in-in sub-category" id="punctuality">
+					<li ><button>тап-тұйнақтай   | organized</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Shoes')">
+	  <img src="assets/img/shoes.png" ><br>
+	  Аяқ киім | Shoes
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/shoes.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Shoes">
+    <li><button>былғары | leather</button></li>
+    <li><button>жылу | warm</button></li>
+    <li><button>ұлтарақ | insole</button></li>
+    <li><button>сыдырма | zipper</button></li>
+    <li  onclick="toggleSubCategory('shoemaker')"><button>етікші | shoemaker</button></li>
+        <ul class="category-in-in sub-category" id="shoemaker">
+          <li onclick="toggleSubCategory('master')"><button>шебер | master</button></li>
+          <ul class="category-in-in-in sub-category" id="master">
+            <li onclick="toggleSubCategory('sewing')"><button>Тігін | sewing</button></li>
+				<ul class="category-in-in-in sub-category" id="sewing">
+					<li ><button>ұлтан   | ultan</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Dress')">
+	  <img src="assets/img/dress.png" ><br>
+	  Көйлек | Dress
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/dress.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Dress">
+    <li><button>кең етек | wide skirt</button></li>
+    <li><button>сән үлгісі | fashion model</button></li>
+    <li><button>бірегей | unique</button></li>
+    <li><button>тоқыма | knitting</button></li>
+    <li  onclick="toggleSubCategory('feature')"><button>ерекшелік | feature</button></li>
+        <ul class="category-in-in sub-category" id="feature">
+          <li onclick="toggleSubCategory('girls')"><button>Қыздар | girls</button></li>
+          <ul class="category-in-in-in sub-category" id="girls">
+            <li onclick="toggleSubCategory('beauty')"><button>Сұлулық | beauty</button></li>
+				<ul class="category-in-in-in sub-category" id="beauty">
+					<li ><button>көз тартуу   | attract</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Headwear')">
+	  <img src="assets/img/headwear.png" ><br>
+	  Бас киім | Headwear
+	  <br>
+         <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/headwear.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+
+	  </li>
+  <ul class="sub-category" id="Headwear">
+    <li><button>тақия | takhiya/turban</button></li>
+    <li><button>тымақ | tymak</button></li>
+    <li><button>құлақшын | earplug</button></li>
+    <li><button>қадірлі | dear</button></li>
+    <li  onclick="toggleSubCategory('foot1')"><button>аяққа баспайды | does not step on foot</button></li>
+        <ul class="category-in-in sub-category" id="foot1">
+          <li onclick="toggleSubCategory('superstition')"><button>ырым | superstition</button></li>
+          <ul class="category-in-in-in sub-category" id="superstition">
+            <li onclick="toggleSubCategory('pity')"><button>обал | pity</button></li>
+				<ul class="category-in-in-in sub-category" id="pity">
+					<li ><button>қасиетті   | sacred</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+</ul>
+<!-- ----------------     -->
+<li class="category" onclick="toggleSubCategory('character1')">
+  <img   src="assets/img/png-transparent-cartoon-body-language-character-set-cartoon-character-human-body-data-removebg-preview.png" alt="">
+  Адам мінезі | Human character
+</li>
+<ul class="sub-category" id="character1">
+  <li class="category category-in" onclick="toggleSubCategory('behavior')">
+	  <img src="assets/img/open.png" ><br>
+	  Ашық | Open behavior
+	 <br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/open.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="behavior">
+    <li><button>жайдары | cheerful</button></li>
+    <li><button>күлімсіреген | smiling</button></li>
+    <li><button>елгезек | open minded</button></li>
+    <li><button>бүкпесіз | sincere</button></li>
+    <li  onclick="toggleSubCategory('sociable')"><button>тіл табысқыш | sociable</button></li>
+        <ul class="category-in-in sub-category" id="sociable">
+          <li onclick="toggleSubCategory('communication')"><button>коммуникация | communication</button></li>
+          <ul class="category-in-in-in sub-category" id="communication">
+            <li onclick="toggleSubCategory('relationship')"><button>байланыс | relationship</button></li>
+				<ul class="category-in-in-in sub-category" id="relationship">
+					<li ><button>достар   | friends</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Deadend')">
+	  <img src="assets/img/dead end.png" ><br>
+	  Тұйық | Dead end
+	   <br>
+	<audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/dead end.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Deadend">
+    <li><button>тұнжыр | introvert</button></li>
+    <li><button>қабағы ашылмайды | depressive</button></li>
+    <li><button>үндемейді | calm</button></li>
+    <li><button>белгісіздік | uncertainty</button></li>
+    <li  onclick="toggleSubCategory('unbrave')"><button>батылсыз | unbrave</button></li>
+        <ul class="category-in-in sub-category" id="unbrave">
+          <li onclick="toggleSubCategory('shy')"><button>жасқаншақ | shy</button></li>
+          <ul class="category-in-in-in sub-category" id="shy">
+            <li onclick="toggleSubCategory('frightened')"><button>үркек | frightened</button></li>
+				<ul class="category-in-in-in sub-category" id="frightened">
+					<li ><button>ашық емес   | </button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Angry')">
+	  <img src="assets/img/anger.png" ><br>
+	  Ашулы | Angry
+	   <br>
+	<audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/angry.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Angry">
+    <li><button>қабағы қарс жабық | darkening/angry</button></li>
+    <li><button>түксиген | gloomy</button></li>
+    <li><button>ауыр сөз | heavy word</button></li>
+    <li><button>сенімсіздік | distrust</button></li>
+    <li  onclick="toggleSubCategory('indignat')"><button>бетіне жан қаратпайды | indignat</button></li>
+        <ul class="category-in-in sub-category" id="indignat">
+          <li onclick="toggleSubCategory('speaks')"><button>артық сөйлейді | speaks too much</button></li>
+          <ul class="category-in-in-in sub-category" id="speaks">
+            <li onclick="toggleSubCategory('touched')"><button>жанға тиеді | touched the soul</button></li>
+				<ul class="category-in-in-in sub-category" id="touched">
+					<li ><button>досы жоқ   | without friend</button></li>
+			  </ul>
+          </ul>
+        </ul>
+      </ul>
+    <li class="category category-in" onclick="toggleSubCategory('Honest')">
+		<img src="assets/img/honest.png" ><br>
+		Адал | Honest
+		 <br>
+	<audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/honest.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Honest">
+    <li><button>әділетті | fair</button></li>
+    <li><button>сенімді | reliable</button></li>
+    <li><button>адами | human</button></li>
+    <li><button>құндылық | value</button></li>
+    <li  onclick="toggleSubCategory('real2')"><button>нағыз | real</button></li>
+        <ul class="category-in-in sub-category" id="real2">
+          <li onclick="toggleSubCategory('strong1')"><button>мықты | strong</button></li>
+          <ul class="category-in-in-in sub-category" id="strong1">
+            <li onclick="toggleSubCategory('worthy')"><button>лайықты | worthy</button></li>
+				<ul class="category-in-in-in sub-category" id="worthy">
+					<li ><button>ең   | most</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('sly')">
+	  <img src="assets/img/sly.png" ><br>
+	  Қу | Sly
+	   <br>
+	<audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/sly.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="sly">
+    <li><button>арам | sly</button></li>
+    <li><button>айлалы | cunning</button></li>
+    <li><button>жалған | false</button></li>
+    <li><button>сенімсіз | unreliable</button></li>
+    <li  onclick="toggleSubCategory('foxy')"><button>түлкі | foxy</button></li>
+        <ul class="category-in-in sub-category" id="foxy">
+          <li onclick="toggleSubCategory('symbol')"><button>символ | symbol</button></li>
+          <ul class="category-in-in-in sub-category" id="symbol">
+            <li onclick="toggleSubCategory('fairy')"><button>ертегі | fairy</button></li>
+				<ul class="category-in-in-in sub-category" id="fairy">
+					<li ><button>алдау   | lie</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+</ul>
+<!-- ----------------     -->
+
+<li class="category" onclick="toggleSubCategory('Interests')">
+  <img   src="assets/img/2853408.png" alt="">
+Қызығушылықтар | Interests
+</li>
+<ul class="sub-category" id="Interests">
+  <li class="category category-in" onclick="toggleSubCategory('Sports')">
+	  <img src="assets/img/sport.png" ><br>
+	  Спорт | Sports
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/sport.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Sports">
+    <li><button>денсаулық | health</button></li>
+    <li><button>сымбат | Fit</button></li>
+    <li><button>еркіндік | freedom</button></li>
+    <li><button>тәртіп | discipline</button></li>
+    <li  onclick="toggleSubCategory('achievement1')"><button>жетістік | achievement</button></li>
+        <ul class="category-in-in sub-category" id="achievement1">
+          <li onclick="toggleSubCategory('award')"><button>атақ | award</button></li>
+          <ul class="category-in-in-in sub-category" id="award">
+            <li onclick="toggleSubCategory('money')"><button>ақша | money</button></li>
+				<ul class="category-in-in-in sub-category" id="money">
+					<li ><button>танымал   | famous</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Yoga')">
+	  <img src="assets/img/yoga.png" ><br>
+	  Йога | Yoga
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/yoga.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Yoga">
+    <li><button>тыныштық | silence</button></li>
+    <li><button>үйлесімділік | harmony</button></li>
+    <li><button>шымыр | sporty</button></li>
+    <li><button>құндылық | value</button></li>
+    <li  onclick="toggleSubCategory('ordering')"><button>реттілік | ordering</button></li>
+        <ul class="category-in-in sub-category" id="ordering">
+          <li onclick="toggleSubCategory('order')"><button>ой тәртібі | order of thought</button></li>
+          <ul class="category-in-in-in sub-category" id="order">
+            <li onclick="toggleSubCategory('pleasure')"><button>жан рақаты | pleasure</button></li>
+				<ul class="category-in-in-in sub-category" id="pleasure">
+					<li ><button>кемелдік   | perfection</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Readingb')">
+	  <img src="assets/img/reading.png" ><br>
+	  Кітап оқу | Reading a book
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/reading.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Readingb">
+    <li><button>ермек | hobby</button></li>
+    <li><button>бос уақыт |  Free time</button></li>
+    <li><button>білім  | knowledge</button></li>
+    <li><button>жан дүние | The soul</button></li>
+    <li  onclick="toggleSubCategory('viewpoint')"><button>дүниетаным | viewpoint</button></li>
+        <ul class="category-in-in sub-category" id="viewpoint">
+          <li onclick="toggleSubCategory('horizone')"><button>көкжиек | horizone</button></li>
+          <ul class="category-in-in-in sub-category" id="horizone">
+            <li onclick="toggleSubCategory('breadth')"><button>кеңдік | breadth</button></li>
+				<ul class="category-in-in-in sub-category" id="breadth">
+					<li ><button>шекарасыз   | limitless</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Cookingf')">
+	  <img src="assets/img/cooking.png" ><br>
+	  Тамақ пісіру | Cooking food
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/cooking.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Cookingf">
+    <li><button>ас үй | kitchen</button></li>
+    <li><button>дәмді | delicious</button></li>
+    <li><button>жайлылық | comfort</button></li>
+    <li><button>тоқшылық | togetherness</button></li>
+    <li  onclick="toggleSubCategory('hottea')"><button>ыстық шай | hot tea</button></li>
+        <ul class="category-in-in sub-category" id="hottea">
+          <li onclick="toggleSubCategory('steam')"><button>бу | steam</button></li>
+          <ul class="category-in-in-in sub-category" id="steam">
+            <li onclick="toggleSubCategory('interview')"><button>әңгімелесу  | interview</button></li>
+				<ul class="category-in-in-in sub-category" id="interview">
+					<li ><button>отырыс   | meeting</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Travel')">
+	  <img src="assets/img/travel.png" ><br>
+	  Саяхат  | Travel
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/travel.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Travel">
+    <li><button>танысу | dating</button></li>
+    <li><button>эмоциялар | emotions</button></li>
+    <li><button>әсерлер | effects</button></li>
+    <li><button>фотолар | photos</button></li>
+    <li  onclick="toggleSubCategory('rest')"><button>демалыс | rest</button></li>
+        <ul class="category-in-in sub-category" id="rest">
+          <li onclick="toggleSubCategory('freetime')"><button>бос уақыт  | free time</button></li>
+          <ul class="category-in-in-in sub-category" id="freetime">
+            <li onclick="toggleSubCategory('freedom')"><button>еркіндік  | freedom</button></li>
+				<ul class="category-in-in-in sub-category" id="freedom">
+					<li ><button>жүзу   | swimming</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+</ul>
+<!-- ----------------     -->
+
+
+
+	<li class="category" onclick="toggleSubCategory('Pets')">
+  <img   src="assets/img/pets.png" alt="">
+Үй жануарлары | Domestic animals
+</li>
+<ul class="sub-category" id="Pets">
+  <li class="category category-in" onclick="toggleSubCategory('Cat')">
+	  <img src="assets/img/cat.png" ><br>
+	  Мысық | Cat
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/cat.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Cat">
+    <li><button>Жайлылық | Comfort</button></li>
+    <li><button>Жұмсақ | Soft</button></li>
+    <li><button>Сүйкімді | Cute</button></li>
+    <li><button>Таза | Clean</button></li>
+	
+    <li  onclick="toggleSubCategory('etek')"><button>Мұхаммед пайғамбардың (с.ғ.с) етегі | The foot of the prophet Muhammad (s.a.w)</button></li>
+        <ul class="category-in-in sub-category" id="etek">
+          <li onclick="toggleSubCategory('holy')"><button>Кие | Holy Among the people, there is a concept that they will be a patron and a supporter. </button></li>
+          <ul class="category-in-in-in sub-category" id="holy">
+            <li onclick="toggleSubCategory('qasiet')"><button>Қасиет | Feature</button></li>
+				<ul class="category-in-in-in sub-category" id="qasiet">
+					<li ><button> Өсиет  | Testament</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('dog')">
+	  <img src="assets/img/dog.png" ><br>
+	  Ит | Dog
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/dog.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="dog">
+    <li><button>Адал | Honest</button></li>
+    <li><button>Сенімді | Reliable</button></li>
+    <li><button>Серік | Mate</button></li>
+    <li><button>Тамақсау | Voracious</button></li>
+	<li  onclick="toggleSubCategory('jeti')"><button>Жеті қазына | Seven treasure (one of the philosophical concepts in the traditional Kazakh worldview)</button></li>
+        <ul class="category-in-in sub-category" id="jeti">  
+		<li  onclick="toggleSubCategory('tazy')"><button>Құмай тазы | Sorghum greyhound</button></li>
+			<ul class="category-in-in sub-category" id="tazy">
+			  <li onclick="toggleSubCategory('qasterli')"><button>Қастерлі | Revered</button></li>
+			  <ul class="category-in-in-in sub-category" id="qasterli">
+				<li onclick="toggleSubCategory('joldas')"><button>Өмірлік жолдас | Reliable companion</button></li>
+					<ul class="category-in-in-in sub-category" id="joldas">
+					<li ><button>   | </button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+	</ul>	  
+  <li class="category category-in" onclick="toggleSubCategory('horse')">
+	  <img src="assets/img/horse.png" ><br>
+	  Жылқы | Horse
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/horse.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="horse">
+    <li><button>Сәйгүлік | Saigulik horse</button></li>
+    <li><button>Тұлпар | Horse </button></li>
+    <li><button>Сұлулық  | Beauty</button></li>
+    <li><button>Қазы, қарта | Kazy (A traditional sausage-like food of Kazakhs) </button></li>
+ 
+    <li  onclick="toggleSubCategory('sogym')"><button>Соғым | Meat</button></li>
+        <ul class="category-in-in sub-category" id="sogym">
+	  <li  onclick="toggleSubCategory('sogym')"><button>Қыстық ас | Meat for witner time</button></li>
+        <ul class="category-in-in sub-category" id="sogym">
+          <li onclick="toggleSubCategory('ata-baba')"><button>Ата-баба дәстүрі | Ancestral tradition</button></li>
+          <ul class="category-in-in-in sub-category" id="ata-baba">
+            <li onclick="toggleSubCategory('dengene')"><button>Деңгене | To divide the horse's meat into parts</button></li>
+				<ul class="category-in-in-in sub-category" id="dengene">
+				
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+	  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('Goat')">
+	  <img src="assets/img/goat.png" ><br>
+	  Ешкі | Goat
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/goat.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="Goat">
+    <li><button>Шошақай | Fidgety</button></li>
+    <li><button>Сүйкімді | Cute</button></li>
+    <li><button>Зиянкес | Pest</button></li>
+    <li><button>Серке | Male goat</button></li>
+
+	<li  onclick="toggleSubCategory('kokpar')"><button>Көкпар | Kokpar(Goat–picking game.  The essence of the game is that riders on horseback are fighting for the headless carcass of a goat, taking it from rivals and scoring a "goal" in a special gate.competition)</button></li>
+        <ul class="category-in-in sub-category" id="kokpar">  
+		<li  onclick="toggleSubCategory('delebesi')"><button>Делебесі қозу | Excitement</button></li>
+			<ul class="category-in-in sub-category" id="delebesi">
+			  <li onclick="toggleSubCategory('ikem')"><button>Икемділік | Flexibility</button></li>
+			  <ul class="category-in-in-in sub-category" id="ikem">
+				<li onclick="toggleSubCategory('tartys')"><button>Тартыс  | Battle</button></li>
+					<ul class="category-in-in-in sub-category" id="tartys">
+					
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+	  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('sheep')">
+	  <img src="assets/img/sheep.png" ><br>
+	  Қой  | Sheep
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/sheep.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="sheep">
+    <li><button>Жұғымды ет | Tender meat</button></li>
+    <li><button>Момын | Meek</button></li>
+    <li><button>Жуас | Shy</button></li>
+    <li><button>Қошқар | Ram sheep</button></li>
+   
+	<li  onclick="toggleSubCategory('kurb')"><button>Құрбандық шалу | Sacrifice</button></li>
+        <ul class="category-in-in sub-category" id="kurb">
+		<li  onclick="toggleSubCategory('paryz')"><button>Парыз | Duty</button></li>
+			<ul class="category-in-in sub-category" id="paryz">
+			  <li onclick="toggleSubCategory('dini')"><button>Діни сенім  | Religious belief</button></li>
+			  <ul class="category-in-in-in sub-category" id="dini">
+				<li onclick="toggleSubCategory('keshirim')"><button>Кешірім сұрау  | Asking excuse</button></li>
+					<ul class="category-in-in-in sub-category" id="keshirim">
+			
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+</ul>
+	</ul>
+<!-- ----------------     -->
+
+	  
+	  <li class="category" onclick="toggleSubCategory('dishes')">
+  <img   src="assets/img/dishes.jpg" alt="">
+Ыдыстар | Dishes
+</li>
+<ul class="sub-category" id="dishes">
+  <li class="category category-in" onclick="toggleSubCategory('shainek')">
+	  <img src="assets/img/teapot.png" ><br>
+	  Шәйнек | Tea pot
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/teapot.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="shainek">
+    <li><button>Шәй | Tea</button></li>
+    <li><button>Дәстүр | Tradition</button></li>
+    <li><button>Қонақ | Guest</button></li>
+    <li><button>Қайнау | To boil</button></li>
+	
+    <li  onclick="toggleSubCategory('quman')"><button>Құман | Tea pot</button></li>
+        <ul class="category-in-in sub-category" id="quman">
+          <li onclick="toggleSubCategory('shygys')"><button>Шығыс | Eastern</button></li>
+          <ul class="category-in-in-in sub-category" id="shygys">
+            <li onclick="toggleSubCategory('ejelgi')"><button>Ежелгі | Ancient</button></li>
+				<ul class="category-in-in-in sub-category" id="ejelgi">
+					<li ><button>Аққұман   | Teapot</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('qazan')">
+	  <img src="assets/img/pan.png" ><br>
+	  Қазан | Pan
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/kazan.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="qazan">
+    <li><button>Қара | Black</button></li>
+    <li><button>Символ | Symbol</button></li>
+    <li><button>Қасиетті | Holy</button></li>
+    <li><button>Шойын | Iron</button></li>
+	<li  onclick="toggleSubCategory('')"><button> | </button></li>
+        <ul class="category-in-in sub-category" id="">  
+		<li  onclick="toggleSubCategory('')"><button>| </button></li>
+			<ul class="category-in-in sub-category" id="">
+			  <li onclick="toggleSubCategory('')"><button> |</button></li>
+			  <ul class="category-in-in-in sub-category" id="">
+				<li onclick="toggleSubCategory('')"><button> | </button></li>
+					<ul class="category-in-in-in sub-category" id="">
+					<li ><button>   | </button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+	  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('pyshaq')">
+	  <img src="assets/img/knife.png" ><br>
+	  Пышақ | Knife
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/knife.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="pyshaq">
+    <li><button>Қайрақ | Knife</button></li>
+    <li><button>Өткір |  Sharp</button></li>
+    <li><button>Қасиет  | Holy</button></li>
+    <li><button>Ауыспау | Not to change</button></li>
+ 
+    <li  onclick="toggleSubCategory('erkek')"><button>Еркектің әлсіздігі | The weakness of male</button></li>
+        <ul class="category-in-in sub-category" id="erkek">
+	  <li  onclick="toggleSubCategory('senim')"><button>Сенім | Hope</button></li>
+        <ul class="category-in-in sub-category" id="senim">
+          <li onclick="toggleSubCategory('danalyq')"><button>Даналық | Wisdom</button></li>
+          <ul class="category-in-in-in sub-category" id="danalyq">
+            <li onclick="toggleSubCategory('naqyl')"><button>Нақыл сөз | Proverb</button></li>
+				<ul class="category-in-in-in sub-category" id="naqyl">
+				
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+	  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('astau')">
+	  <img src="assets/img/astau.png" ><br>
+	  Астау | Astau
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/astau.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="astau">
+    <li><button>Бас қосу | Meeting</button></li>
+    <li><button>Татулық | Peace</button></li>
+    <li><button>Бірлік | Unity</button></li>
+    <li><button>Молшылық | Abundance</button></li>
+
+	<li  onclick="toggleSubCategory('tuq')"><button>Тоқшылық | Togetherness</button></li>
+        <ul class="category-in-in sub-category" id="toq">  
+		<li  onclick="toggleSubCategory('bereke')"><button>Береке | Well being/Unity</button></li>
+			<ul class="category-in-in sub-category" id="bereke">
+			  <li onclick="toggleSubCategory('auqat')"><button>Ауқатты | Wealthy</button></li>
+			  <ul class="category-in-in-in sub-category" id="auqat">
+				<li onclick="toggleSubCategory('daulet')"><button>Дәулетті  | Wealthy</button></li>
+					<ul class="category-in-in-in sub-category" id="daulet">
+					
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+	  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('torsyqa')">
+	  <img src="assets/img/tosryk.png" ><br>
+	  Торсық  | Torsyk 
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/torsyq.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="torsyqa">
+    <li><button>Ыдыс | Bowl</button></li>
+    <li><button>Сусын | Drink</button></li>
+    <li><button>Қымыз | Kumys</button></li>
+    <li><button>Ердің қасы | Saddle eyebrows </button></li>
+   
+	<li  onclick="toggleSubCategory('bylgarya')"><button>Былғары | Leather</button></li>
+        <ul class="category-in-in sub-category" id="bylgraya">
+		<li  onclick="toggleSubCategory('qutya')"><button>Құты | Box</button></li>
+			<ul class="category-in-in sub-category" id="qutya">
+			  <li onclick="toggleSubCategory('era')"><button>Ер жігіт  | Male</button></li>
+			  <ul class="category-in-in-in sub-category" id="era">
+				<li onclick="toggleSubCategory('alysa')"><button>Алыс сапар  | Long journey</button></li>
+					<ul class="category-in-in-in sub-category" id="alysa">
+			
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+</ul>
+	</ul>
+	<!-- ----------------     -->
+
+	  
+	  <li class="category" onclick="toggleSubCategory('tosenishter')">
+  <img   src="assets/img/blankets.png" alt="">
+Төсеніштер | Mats
+</li>
+<ul class="sub-category" id="tosenishter">
+  <li class="category category-in" onclick="toggleSubCategory('blanket')">
+	  <img src="assets/img/korpe.png" ><br>
+	  Көрпе | Blanket
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/korpe.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="blanket">
+    <li><button>Жылулық | Warmth</button></li>
+    <li><button>Қалың | Thick</button></li>
+    <li><button>Мақта | Cotton</button></li>
+    <li><button>Жүн | Wool</button></li>
+	
+    <li  onclick="toggleSubCategory('quraq')"><button>Құрақ көрпе | Patchwork is a unique sewing art that stands out among the Kazakh applied arts and decorates every home</button></li>
+        <ul class="category-in-in sub-category" id="quraq">
+          <li onclick="toggleSubCategory('senim')"><button>Халықтық сенім | Folk reliance</button></li>
+          <ul class="category-in-in-in sub-category" id="senim">
+            <li onclick="toggleSubCategory('yrym')"><button>Ырым | Superstition</button></li>
+				<ul class="category-in-in-in sub-category" id="yrym">
+					<li ><button>Қамқорлық   | Caring</button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('pillows')">
+	  <img src="assets/img/pillow.png" ><br>
+	  Жастық | Pillow
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/jastyq.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="pillows">
+    <li><button>Құс | Bird</button></li>
+    <li><button>Мамық | Fluffy</button></li>
+    <li><button>Бас | Head</button></li>
+    <li><button>Қадірлі | Iron</button></li>
+	<li  onclick="toggleSubCategory('')"><button>Жастықты баспа | Do not step into pillow</button></li>
+        <ul class="category-in-in sub-category" id="">  
+		<li  onclick="toggleSubCategory('')"><button>Тыйым | Banning</button></li>
+			<ul class="category-in-in sub-category" id="">
+			  <li onclick="toggleSubCategory('')"><button>Табу | Taboo</button></li>
+			  <ul class="category-in-in-in sub-category" id="">
+				<li onclick="toggleSubCategory('')"><button>Сенім | Faith/Reliance</button></li>
+					<ul class="category-in-in-in sub-category" id="">
+					<li ><button>   | </button></li>
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+	  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('carpet')">
+	  <img src="assets/img/carpet.png" ><br>
+	  Кілем | Carpet
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/kilem.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="carpet">
+    <li><button>Еңбек | Labor</button></li>
+    <li><button>Алуан түс |  Colourful</button></li>
+    <li><button>Өрнектер  | Patterns</button></li>
+    <li><button>Оюлар | Ornaments</button></li>
+ 
+    <li  onclick="toggleSubCategory('erkek')"><button>Ши | Shi (The national furniture for the home)</button></li>
+        <ul class="category-in-in sub-category" id="erkek">
+	  <li  onclick="toggleSubCategory('senim')"><button>Қамыс | Reeds</button></li>
+        <ul class="category-in-in sub-category" id="senim">
+          <li onclick="toggleSubCategory('danalyq')"><button>Еңбек құралы | The instrument of labour</button></li>
+          <ul class="category-in-in-in sub-category" id="danalyq">
+            <li onclick="toggleSubCategory('naqyl')"><button>Жеңіл | Light</button></li>
+				<ul class="category-in-in-in sub-category" id="naqyl">
+				
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+	  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('kuiz')">
+	  <img src="assets/img/kuiz.jpg" ><br>
+	  Киіз | Kuiz
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/kuiz.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="kuiz">
+    <li><button>Текемет | Tekemet (A work of decorative and applied art, yurt furniture with colored ornaments on the surface)</button></li>
+    <li><button>Түр салу | Make ornaments</button></li>
+    <li><button>Ауыр | Heavy</button></li>
+    <li><button>Жылы | Warm</button></li>
+
+	<li  onclick="toggleSubCategory('tuq')"><button>Баспана | Shelter</button></li>
+        <ul class="category-in-in sub-category" id="toq">  
+		<li  onclick="toggleSubCategory('bereke')"><button>Үй | House</button></li>
+			<ul class="category-in-in sub-category" id="bereke">
+			  <li onclick="toggleSubCategory('auqat')"><button>Қорғаныш | Protection</button></li>
+			  <ul class="category-in-in-in sub-category" id="auqat">
+				<li onclick="toggleSubCategory('daulet')"><button>Отау  | Married home</button></li>
+					<ul class="category-in-in-in sub-category" id="daulet">
+					
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+	  </ul>
+  <li class="category category-in" onclick="toggleSubCategory('korpeshe')">
+	  <img src="assets/img/көрпеше.jpg" ><br>
+	  Көрпеше  | Blanket
+	<br>
+	  <audio style="margin-top: 10px;" controls>
+            <source src="assets/audiofile/korpeshe.m4a" type="audio/mp3">
+            Your browser does not support the audio tag.
+        </audio>
+	</li>
+  <ul class="sub-category" id="korpeshe">
+    <li><button>Қонақ | Guest</button></li>
+    <li><button>Қабаттау | Layering the blanket</button></li>
+    <li><button>Жылы | Warm</button></li>
+    <li><button>Ұзын | Long</button></li>
+   
+	<li  onclick="toggleSubCategory('blanket')"><button>Қыз жасауы | As a dowry (It is a gift from parents, which is given in ancient Turkic countries after their daughter’s marriage. It includes clothes, household items, household items and other items) </button></li>
+        <ul class="category-in-in sub-category" id="bylgray">
+		<li  onclick="toggleSubCategory('quty')"><button>Ананың парызы | Mother's duty/Present</button></li>
+			<ul class="category-in-in sub-category" id="quty">
+			  <li onclick="toggleSubCategory('er')"><button>Естелік  | Memory</button></li>
+			  <ul class="category-in-in-in sub-category" id="er">
+				<li onclick="toggleSubCategory('alys')"><button>Алақан табы  | Palm trail</button></li>
+					<ul class="category-in-in-in sub-category" id="alys">
+			
+			  </ul>
+          </ul>
+        </ul>
+  </ul>
+</ul>
+
+<script>
+  function toggleSubCategory(categoryId) {
+    var subCategory = document.getElementById(categoryId);
+    subCategory.style.display = subCategory.style.display === 'none' || subCategory.style.display === '' ? 'block' : 'none';
+  }
+
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
+<div class="settings-icon" onclick="toggleDarkMode()">
+  <img id="darkModeIcon" src="/assets/img/moon.svg" alt="Toggle Dark Mode">
+</div>
+
+
+<script>
+  function toggleDarkMode() {
+  var body = document.body;
+  var darkModeIcon = document.getElementById('darkModeIcon');
+
+  body.classList.toggle('dark-mode');
+
+  // Проверяем, находится ли тело в темном режиме
+  var isDarkMode = body.classList.contains('dark-mode');
+
+  // Обновляем изображение в зависимости от режима
+  darkModeIcon.src = isDarkMode ? 'assets/img/wind-sun-1.svg' : 'assets/img/moon.svg';
+}
+
+</script>
+</body>
+</html>
